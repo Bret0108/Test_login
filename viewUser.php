@@ -21,9 +21,8 @@ if(mysqli_num_rows($Rec) > 0){
 					<td>
 						<button type="button" style="padding-right:7px;" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#update">
   						Update</button>
-  						<form action="" method="GET">
-    					<button style="margin-top:5px;" class='btn btn-danger'  name="dels" value="<?= $rec['ID_No'];?>">Delete</button>
-    					</form>
+  						<button type="button" style="padding-right:7px;" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">
+  						Delete</button>
 					</td>
 					<td><?= $rec['Username'];?></td>
 					<td><?= $rec['Password'];?></td>
@@ -31,7 +30,7 @@ if(mysqli_num_rows($Rec) > 0){
 
 
 				
-				<div class="modal fade" id="update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal fade" id="update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog">
 				    <div class="modal-content">
 				      <div class="modal-header">
@@ -41,9 +40,19 @@ if(mysqli_num_rows($Rec) > 0){
 				      <div class="modal-body">
 
 				      	<form action="" method="POST">
+
+				      	<div class="row">
+			                  <div class="col-25">
+			                    <label for="fname">Type Old Username</label>
+			                  </div>
+			                  <div class="col-75">
+			                    <input class="form-control" type="text" id="fname" name="Oldusername"  placeholder="Username"></input>
+			                  </div>
+                		</div>
+
 				        <div class="row">
 				          <div class="col-25">
-				            <label for="fname">Username</label>
+				            <label for="fname">New Username</label>
 				          </div>
 				          <div class="col-75">
 				            <input class="form-control" type="text" id="fname" name="username" placeholder="Username"></input>
@@ -51,7 +60,7 @@ if(mysqli_num_rows($Rec) > 0){
 				        </div>
 				        <div class="row">
 				          <div class="col-25">
-				            <label for="subject">Password</label>
+				            <label for="subject">New Password</label>
 				          </div>
 				          <div class="col-75">
 				            <input class="form-control" type="password" id="subject" name="password" placeholder="Password"></input>
@@ -59,7 +68,38 @@ if(mysqli_num_rows($Rec) > 0){
 				        </div>
 					        <div class="modal-footer">
 					        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-					        <button  class="btn btn-success" name="ups" value="<?= $rec['ID_No'];?>">Update</button>
+					        <button  class="btn btn-success" name="ups">Update</button>
+						    </div>
+					    </form>
+					  </div>      
+				    </div>
+				  </div>
+				</div>
+
+
+				<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete?</h5>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				      </div>
+				      <div class="modal-body">
+
+				      	<form action="" method="GET">
+
+				      	<div class="row">
+			                  <div class="col-25">
+			                    <label for="fname">Type your username to delete</label>
+			                  </div>
+			                  <div class="col-75">
+			                    <input class="form-control" type="text" id="fname" name="Dusername"  placeholder="Username"></input>
+			                  </div>
+                		</div>
+
+					        <div class="modal-footer">
+					        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancel</button>
+					        <button  class="btn btn-danger" name="dels">Delete</button>
 						    </div>
 					    </form>
 					  </div>      

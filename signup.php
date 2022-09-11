@@ -10,20 +10,20 @@
   <body>
 
 
-    <h1>Practice Login</h1>
+    <h1>Signup</h1>
 
     <div class="position-absolute top-50 start-50 translate-middle">
       <div class="w-100 p-3 border border-secondary" style="background-color: #eee;">
         
-        <h2>Login</h2>
+        <h2>Signup</h2>
         <form action="" method="POST" >
-         <?php include('login.php');?>
+         <?php include('create.php');?>
         <div class="row">
           <div class="col-25">
             <label for="fname">Username</label>
           </div>
           <div class="col-75">
-            <input class="form-control" type="text" id="fname" name="username" placeholder="Username"></input>
+            <input class="form-control" type="text" id="fname" name="username" placeholder="Username" required></input>
           </div>
         </div>
         <div class="row">
@@ -31,12 +31,12 @@
             <label for="subject">Password</label>
           </div>
           <div class="col-75">
-            <input class="form-control" type="password" id="subject" name="password" placeholder="Password"></input>
+            <input class="form-control" type="password" id="subject" name="password" placeholder="Password" required></input>
           </div>
         </div>
         <div class="rows">
-          <input type="submit" value="Submit" name="login_user">
-          <a class="button" href="signup.php">Signup</a>
+          <input type="submit" value="Submit" name="signup">
+          <a class="button" href="index.php">back</a>
         </div>
       </form>
       </div>

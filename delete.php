@@ -5,9 +5,9 @@ include('connection.php');
 
 
 if(isset($_GET['dels'])){
-	$ID = $_GET['dels'];
+	$username = $_GET['Dusername'];
 
-	$sql = "DELETE FROM `login` WHERE `ID_No` = '$ID'";
+	$sql = "DELETE FROM `login` WHERE `Username` = '$username'";
 	$run = mysqli_query($con, $sql);
 
   }
